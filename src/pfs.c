@@ -32,7 +32,7 @@
 #include "esp_log.h"
 
 
-#if !defined CONFIG_SPIRAM_SUPPORT
+#if !defined CONFIG_SPIRAM_SUPPORT && !defined CONFIG_ESP32S3_SPIRAM_SUPPORT
   #warning "No SPIRAM detected, will use heap"
 #endif
 
