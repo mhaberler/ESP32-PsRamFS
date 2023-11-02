@@ -904,7 +904,7 @@ int pfs_unlink( const char * path )
 
 void pfs_free()
 {
-  ESP_LOGD(TAG, "[%d] bytes available before free()", pfs_free_mem() );
+  ESP_LOGD(TAG, "[%u] bytes available before free()", pfs_free_mem() );
 
   if( pfs_files != NULL ) {
     for( int i=0; i<pfs_max_items; i++ ) {
@@ -919,7 +919,7 @@ void pfs_free()
     free( pfs_files );
     pfs_files = NULL;
   }
-  ESP_LOGD(TAG, "[%d] bytes free after cleaning files", pfs_free_mem() );
+  ESP_LOGD(TAG, "[%u] bytes free after cleaning files", pfs_free_mem() );
 
   if( pfs_dirs != NULL ) {
     for( int i=0; i<pfs_max_items; i++ ) {
@@ -951,7 +951,7 @@ void pfs_free()
     pfs_base_path = NULL;
   }
 
-  ESP_LOGD(TAG, "[%d] bytes free after full cleanup", pfs_free_mem() );
+  ESP_LOGD(TAG, "[%u] bytes free after full cleanup", pfs_free_mem() );
 }
 
 
